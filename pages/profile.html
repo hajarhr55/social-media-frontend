@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+
+    <!-- ===== IMPORT AXIOS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- ===== IMPORT FONT AWESOME ICONS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ===== IMPORT BOOTSTRAP ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      body {
+        background-color: #eeeeee;
+      }
+      .user-main-info {
+        font-weight: 500;
+        font-size: 18px;
+      }
+      .number-info {
+        color: rgb(171, 171, 171);
+        font-weight: 100;
+      }
+      .number-info span {
+        font-size: 32px;
+        color: black;
+      }
+      @media (min-width: 768px) {
+        .number-info span {
+          font-size: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =====HEADER COMPONENT===== -->
+    <div id="header"></div>
+
+    <!-- ===== MODALS (Create / Edit / Delete) POST ===== -->
+    <div id="modal"></div>
+    <div id="delete-modal"></div>
+
+    <!-- =====LOADER COMPONENT===== -->
+    <div id="loader" style="display: none"></div>
+
+    <!-- ===== PROFILE PAGE CONTENT ===== -->
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div id="profile-info" class="card shadow">
+            <div id="profile"></div>
+          </div>
+          <div id="posts"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- ===== MAIN APP SCRIPT ===== -->
+  <script src="/js/app.js" defer></script>
+  <script>
+    // ===== LOAD PAGE COMPONENTS =====
+    Promise.all([
+      fetch("/components/header.html").then((r) => r.text()),
+      fetch("/components/postModal.html").then((r) => r.text()),
+      fetch("/components/deleteModal.html").then((r) => r.text()),
+      fetch("/components/loader.html").then((r) => r.text()),
+    ]).then(([headerHtml, modalHtml, deleteHtml, loaderHtml]) => {
+      document.getElementById("header").innerHTML = headerHtml;
+      document.getElementById("modal").innerHTML = modalHtml;
+      document.getElementById("delete-modal").innerHTML = deleteHtml;
+      document.getElementById("loader").innerHTML = loaderHtml;
+
+      updateHeaderUI();
+      getUserProfile();
+      getPosts(id);
+    });
+
+    // ===== URL PARAMETERS =====
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    if (!id) {
+      window.location.href = "../index.html";
+    }
+
+    // ===== FETCH USER PROFILE FROM API =====
+    function getUserProfile() {
+      toggleLoader(true);
+
+      axios
+        .get(`${API_URL}/api/v1/users/${id}`)
+        .then((response) => {
+          const user = response.data.user;
+          document.getElementById("profile").innerHTML =
+            createUserProfile(user);
+        })
+        .finally(() => {
+          toggleLoader(false);
+        });
+    }
+
+    // ===== RENDER USER PROFILE UI =====
+    function createUserProfile(user) {
+      return `
+   <div  class="card-body">
+              <div class="row align-items-center g-4">
+                <div class="col-12 col-md-3 text-center">
+                  <img
+                    id="profile_image"
+                    style="width: 120px; height: 120px; padding: 4px"
+                    class="rounded-circle  img-fluid"
+                    src="${user.image}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-12 col-md-5  text-center text-md-start">
+                  <div class="user-main-info">${user.email}</div>
+
+                  <div class="user-main-info">${user.name}</div>
+
+                  <div class="user-main-info">${user.username}</div>
+                </div>
+                <div class="col-12 col-md-4 ">
+                 <div class="d-flex d-md-block justify-content-center text-center text-md-start gap-4">
+                  <div class="number-info">
+                    <span>${user.posts_count}</span> posts
+                     </div>
+                    <div class="number-info"><span>${user.comments_count}</span> comment</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  `;
+    }
+
+    // ===== FETCH USER POSTS =====
+    function getPosts(userId) {
+      toggleLoader(true);
+
+      axios
+        .get(`${API_URL}/api/v1/users/${userId}/posts`)
+        .then((response) => {
+          let posts = response.data.posts;
+          let container = document.getElementById("posts");
+          let html = "";
+          for (let post of posts) {
+            html += createPostCard(post);
+          }
+          container.insertAdjacentHTML("beforeend", html);
+        })
+        .finally(() => {
+          toggleLoader(false);
+        });
+    }
+  </script>
+</html>

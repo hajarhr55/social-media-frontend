@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- ===== IMPORT AXIOS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- ===== IMPORT FONT AWESOME ICONS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- ===== IMPORT BOOTSTRAP ===== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body style="background-color: #eeeeee">
+    <!-- =====HEADER COMPONENT===== -->
+    <div id="header"></div>
+
+    <!-- ===== MODALS (Create / Edit / Delete) POST ===== -->
+    <div id="modal"></div>
+    <div id="delete-modal"></div>
+
+    <!-- =====LOADER COMPONENT===== -->
+    <div id="loader" style="display: none"></div>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-10 col-lg-8">
+          <div id="posts" class="posts">
+            <div id="post"></div>
+            <div
+              class="d-flex flex-column flex-sm-row mt-3 gap-2"
+              id="comment-btn"
+            >
+              <input
+                id="comment-input"
+                type="text"
+                class="form-control"
+                placeholder="Write a comment..."
+              />
+              <button onclick="addComment()" class="btn btn-primary">
+                Send
+              </button>
+            </div>
+            <div id="comments"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- ===== MAIN APP SCRIPT ===== -->
+  <script src="/js/app.js" defer></script>
+  <script>
+    // ===== LOAD PAGE COMPONENTS =====
+    Promise.all([
+      fetch("/components/header.html").then((r) => r.text()),
+      fetch("/components/postModal.html").then((r) => r.text()),
+      fetch("/components/deleteModal.html").then((r) => r.text()),
+      fetch("/components/loader.html").then((r) => r.text()),
+    ]).then(([headerHtml, modalHtml, deleteHtml, loaderHtml]) => {
+      document.getElementById("header").innerHTML = headerHtml;
+      document.getElementById("modal").innerHTML = modalHtml;
+      document.getElementById("delete-modal").innerHTML = deleteHtml;
+      document.getElementById("loader").innerHTML = loaderHtml;
+
+      updateHeaderUI();
+
+      loadPost();
+      loadComments();
+    });
+
+    // ===== URL PARAMETERS =====
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    // ===== LOAD SINGLE POST =====
+    function loadPost() {
+      toggleLoader(true);
+
+      axios
+        .get(`${API_URL}/api/v1/posts/${id}`)
+        .then((response) => {
+          const post = response.data.post;
+          document.getElementById("post").innerHTML = createPostCard(
+            post,
+            false,
+          );
+        })
+        .finally(() => {
+          toggleLoader(false);
+        });
+    }
+
+    // ===== LOAD COMMENTS =====
+    function loadComments() {
+      toggleLoader(true);
+
+      axios
+        .get(`${API_URL}/api/v1/comments?post_id=${id}`)
+        .then((response) => {
+          const comments = response.data.comments;
+          document.getElementById("comments").innerHTML = "";
+
+          for (let comment of comments) {
+            let content = `
+      
+        <div class="p-3 bg-white shadow rounded mt-3 w-100">
+
+          <div>
+
+            <img
+              src="${comment.author.profile_image}"
+              class="rounded-circle flex-shrink-0"
+              style="width: 40px; height: 40px;"
+            />
+
+            <b>@${comment.author.username}</b>
+
+          </div>
+
+          <div class="mt-2">
+            ${comment.body}
+          </div>
+
+        </div>
+      `;
+
+            document.getElementById("comments").innerHTML += content;
+          }
+        })
+        .finally(() => {
+          toggleLoader(false);
+        });
+    }
+
+    // ===== ADD COMMENT =====
+    function addComment() {
+      const body = document.getElementById("comment-input").value;
+      const token = localStorage.getItem("token");
+      toggleLoader(true);
+
+      axios
+        .post(
+          `${API_URL}/api/v1/comments?post_id=${id}`,
+          {
+            body: body,
+            post_id: id,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        )
+        .then((response) => {
+          document.getElementById("comment-input").value = "";
+
+          loadComments();
+          showAlert(response.data.message, response.data.type);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          toggleLoader(false);
+        });
+    }
+  </script>
+</html>
