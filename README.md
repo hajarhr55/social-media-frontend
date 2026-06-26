@@ -79,26 +79,6 @@ https://github.com/hajarhr55/social-media-api
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Home Page
-
-![Home-Page](https://github.com/user-attachments/assets/e7b27874-ff86-46ab-ab89-1fbe4e1db408)
-
-### 📝 Single Post + Comments
-
-![Single-Post-Comments](https://github.com/user-attachments/assets/b98c3f77-2f46-4f2e-8d37-2c9cb85e314f)
-
-### 👤 Profile Page (Desktop)
-
-![Profile-Page-(Desktop)](https://github.com/user-attachments/assets/252eea93-10dc-48f1-8e82-80d558bd5754)
-
-### 📱 Profile Page (Mobile)
-
-![Profile-Page-(Mobile)](https://github.com/user-attachments/assets/fd96eba0-23f9-4eeb-9692-4752b4f35224)
-
----
-
 ## 📚 What I Learned
 
 This is one of my largest and most practical frontend projects.  
@@ -198,26 +178,6 @@ https://github.com/hajarhr55/social-media-api
 - البرمجة غير المتزامنة
 - تنظيم الكود
 - Git & GitHub
-
----
-
-## 📸 لقطات من المشروع
-
-### 🏠 الصفحة الرئيسية
-
-![Home-Page](https://github.com/user-attachments/assets/e7b27874-ff86-46ab-ab89-1fbe4e1db408)
-
-### 📝 صفحة منشور واحد + التعليقات
-
-![Single-Post-Comments](https://github.com/user-attachments/assets/b98c3f77-2f46-4f2e-8d37-2c9cb85e314f)
-
-### 👤 صفحة الملف الشخصي (كمبيوتر)
-
-![Profile-Page-(Desktop)](https://github.com/user-attachments/assets/252eea93-10dc-48f1-8e82-80d558bd5754)
-
-### 📱 صفحة الملف الشخصي (جوال)
-
-![Profile-Page-(Mobile)](https://github.com/user-attachments/assets/fd96eba0-23f9-4eeb-9692-4752b4f35224)
 
 ---
 
