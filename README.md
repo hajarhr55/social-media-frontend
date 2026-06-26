@@ -26,56 +26,76 @@ https://github.com/hajarhr55/social-media-api
 
 ## ✨ Features
 
-- User registration and login  
-- Token‑based authentication  
-- Create posts with optional images  
-- Edit and delete personal posts  
-- View all posts with pagination  
-- View single post details  
-- Add comments to posts  
-- User profile page  
-- Responsive layout for all devices  
-- Dynamic modals for creating/editing/deleting posts  
-- Loading indicators during API calls  
-- Toast notifications for feedback  
-- Persistent login using Local Storage  
-- Responsive navigation bar  
-- Image upload support via API  
-- Clean and modular JavaScript structure  
+- User registration and login
+- Token‑based authentication
+- Create posts with optional images
+- Edit and delete personal posts
+- View all posts with pagination
+- View single post details
+- Add comments to posts
+- User profile page
+- Responsive layout for all devices
+- Dynamic modals for creating/editing/deleting posts
+- Loading indicators during API calls
+- Toast notifications for feedback
+- Persistent login using Local Storage
+- Responsive navigation bar
+- Image upload support via API
+- Clean and modular JavaScript structure
 
 ---
 
 ## 🧠 Skills Practiced
 
-- Semantic HTML5  
-- CSS3 & Responsive Design  
-- Bootstrap 5  
-- JavaScript (ES6+)  
-- DOM Manipulation  
-- Event Handling  
-- Axios for API requests  
-- REST API integration  
-- CRUD operations  
-- Token-based authentication  
-- Local Storage  
-- Dynamic & conditional rendering   
-- Error handling  
-- Asynchronous JavaScript (Promises)  
-- Code organization & reusable components  
-- Git & GitHub workflow  
+- Semantic HTML5
+- CSS3 & Responsive Design
+- Bootstrap 5
+- JavaScript (ES6+)
+- DOM Manipulation
+- Event Handling
+- Axios for API requests
+- REST API integration
+- CRUD operations
+- Token-based authentication
+- Local Storage
+- Dynamic & conditional rendering
+- Error handling
+- Asynchronous JavaScript (Promises)
+- Code organization & reusable components
+- Git & GitHub workflow
 
 ---
 
 ## 🧰 Tech Stack
 
-- HTML5  
-- CSS3  
-- Bootstrap 5  
-- JavaScript (ES6)  
-- Axios  
-- REST API  
-- Git  
-- GitHub  
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript (ES6)
+- Axios
+- REST API
+- Git
+- GitHub
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home-Page](https://github.com/user-attachments/assets/e7b27874-ff86-46ab-ab89-1fbe4e1db408)
+
+### 📝 Single Post + Comments
+
+![Single-Post-Comments](https://github.com/user-attachments/assets/b98c3f77-2f46-4f2e-8d37-2c9cb85e314f)
+
+### 👤 Profile Page (Desktop)
+
+![Profile-Page-(Desktop)](https://github.com/user-attachments/assets/252eea93-10dc-48f1-8e82-80d558bd5754)
+
+### 📱 Profile Page (Mobile)
+
+![Profile-Page-(Mobile)](https://github.com/user-attachments/assets/fd96eba0-23f9-4eeb-9692-4752b4f35224)
 
 ---
 
@@ -84,23 +104,23 @@ https://github.com/hajarhr55/social-media-api
 This is one of my largest and most practical frontend projects.  
 It gave me hands-on experience with:
 
-- Real API integration  
-- Authentication flows  
-- Dynamic UI updates  
-- Managing state on the frontend  
-- Building reusable components  
-- Structuring JavaScript for scalability  
+- Real API integration
+- Authentication flows
+- Dynamic UI updates
+- Managing state on the frontend
+- Building reusable components
+- Structuring JavaScript for scalability
 
 ---
 
 ## 🚀 Future Improvements
 
-- Search functionality  
-- Like & reaction system  
-- Notifications  
-- Dark mode   
-- Follow system  
-- Enhanced profile customization  
+- Search functionality
+- Like & reaction system
+- Notifications
+- Dark mode
+- Follow system
+- Enhanced profile customization
 
 ---
 
@@ -139,45 +159,65 @@ https://github.com/hajarhr55/social-media-api
 
 ## ✨ المميزات
 
-- تسجيل مستخدمين جدد وتسجيل الدخول  
-- مصادقة باستخدام التوكن  
-- إنشاء منشورات مع إمكانية رفع الصور  
-- تعديل وحذف المنشورات الشخصية  
-- عرض جميع المنشورات مع ترقيم الصفحات  
-- عرض تفاصيل منشور واحد  
-- إضافة تعليقات  
-- صفحة ملف شخصي  
-- تصميم متجاوب لجميع الأجهزة  
-- نوافذ منبثقة ديناميكية للإنشاء والتعديل والحذف  
-- مؤشر تحميل أثناء طلبات API  
-- تنبيهات Toast للتفاعل مع المستخدم  
-- تسجيل دخول مستمر باستخدام Local Storage  
-- شريط تنقل متجاوب  
-- دعم رفع الصور عبر الـ API  
-- تنظيم الكود بطريقة نظيفة وقابلة لإعادة الاستخدام  
+- تسجيل مستخدمين جدد وتسجيل الدخول
+- مصادقة باستخدام التوكن
+- إنشاء منشورات مع إمكانية رفع الصور
+- تعديل وحذف المنشورات الشخصية
+- عرض جميع المنشورات مع ترقيم الصفحات
+- عرض تفاصيل منشور واحد
+- إضافة تعليقات
+- صفحة ملف شخصي
+- تصميم متجاوب لجميع الأجهزة
+- نوافذ منبثقة ديناميكية للإنشاء والتعديل والحذف
+- مؤشر تحميل أثناء طلبات API
+- تنبيهات Toast للتفاعل مع المستخدم
+- تسجيل دخول مستمر باستخدام Local Storage
+- شريط تنقل متجاوب
+- دعم رفع الصور عبر الـ API
+- تنظيم الكود بطريقة نظيفة وقابلة لإعادة الاستخدام
 
 ---
 
 ## 🧠 المهارات التي تم تطويرها
 
-- HTML5  
-- CSS3  
-- التصميم المتجاوب  
-- Bootstrap 5  
-- JavaScript ES6  
-- التعامل مع DOM  
-- إدارة الأحداث  
-- Axios  
-- REST API  
-- عمليات CRUD  
-- المصادقة باستخدام التوكن  
-- Local Storage  
-- العرض الديناميكي والشرطي  
-- رفع الملفات  
-- التعامل مع الأخطاء  
-- البرمجة غير المتزامنة  
-- تنظيم الكود  
-- Git & GitHub  
+- HTML5
+- CSS3
+- التصميم المتجاوب
+- Bootstrap 5
+- JavaScript ES6
+- التعامل مع DOM
+- إدارة الأحداث
+- Axios
+- REST API
+- عمليات CRUD
+- المصادقة باستخدام التوكن
+- Local Storage
+- العرض الديناميكي والشرطي
+- رفع الملفات
+- التعامل مع الأخطاء
+- البرمجة غير المتزامنة
+- تنظيم الكود
+- Git & GitHub
+
+---
+
+## 📸 لقطات من المشروع
+
+### 🏠 الصفحة الرئيسية
+
+![Home-Page](https://github.com/user-attachments/assets/e7b27874-ff86-46ab-ab89-1fbe4e1db408)
+
+### 📝 صفحة منشور واحد + التعليقات
+
+![Single-Post-Comments](https://github.com/user-attachments/assets/b98c3f77-2f46-4f2e-8d37-2c9cb85e314f)
+
+### 👤 صفحة الملف الشخصي (كمبيوتر)
+
+![Profile-Page-(Desktop)](https://github.com/user-attachments/assets/252eea93-10dc-48f1-8e82-80d558bd5754)
+
+### 📱 صفحة الملف الشخصي (جوال)
+
+![Profile-Page-(Mobile)](https://github.com/user-attachments/assets/fd96eba0-23f9-4eeb-9692-4752b4f35224)
 
 ---
 
@@ -185,22 +225,22 @@ https://github.com/hajarhr55/social-media-api
 
 يُعد هذا المشروع من أكبر وأهم المشاريع التي عملت عليها في الواجهة الأمامية، حيث اكتسبت خبرة عملية في:
 
-- دمج الـ API  
-- إدارة المصادقة  
-- تحديث الواجهة بشكل ديناميكي  
-- تنظيم الكود في مكونات قابلة لإعادة الاستخدام  
-- بناء واجهات تفاعلية متقدمة  
+- دمج الـ API
+- إدارة المصادقة
+- تحديث الواجهة بشكل ديناميكي
+- تنظيم الكود في مكونات قابلة لإعادة الاستخدام
+- بناء واجهات تفاعلية متقدمة
 
 ---
 
 ## 🚀 تحسينات مستقبلية
 
-- البحث  
-- نظام الإعجابات والتفاعلات  
-- الإشعارات  
-- الوضع الليلي   
-- نظام المتابعة  
-- تخصيص الملف الشخصي بشكل أكبر  
+- البحث
+- نظام الإعجابات والتفاعلات
+- الإشعارات
+- الوضع الليلي
+- نظام المتابعة
+- تخصيص الملف الشخصي بشكل أكبر
 
 ---
 
