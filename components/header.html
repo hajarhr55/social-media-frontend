@@ -1,86 +1,89 @@
 <!-- ===== NAVIGATION ===== -->
-<div class="container mt-3">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-8">
-      <nav class="navbar shadow rounded navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">Tarmeez</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  style="cursor: pointer"
-                  onclick="profileClicked()"
-                  >Profile</a
-                >
-              </li>
-            </ul>
-            <!-- START NON-LOGGED IN USER -->
+<div class="fixed-top">
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <nav class="navbar shadow rounded navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Tarmeez</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="../index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    style="cursor: pointer"
+                    onclick="profileClicked()"
+                    >Profile</a
+                  >
+                </li>
+              </ul>
+              <!-- START NON-LOGGED IN USER -->
 
-            <div class="d-flex gap-2">
-              <a
-                href="/pages/login.html"
-                role="button"
-                id="login-btn"
-                class="btn btn-outline-success"
-              >
-                Login
-              </a>
+              <div class="d-flex gap-2">
+                <a
+                  href="/pages/login.html"
+                  role="button"
+                  id="login-btn"
+                  class="btn btn-outline-success"
+                >
+                  Login
+                </a>
 
-              <a
-                href="/pages/register.html"
-                role="button"
-                id="register-btn"
-                class="btn btn-outline-success"
-              >
-                Register
-              </a>
+                <a
+                  href="/pages/register.html"
+                  role="button"
+                  id="register-btn"
+                  class="btn btn-outline-success"
+                >
+                  Register
+                </a>
+              </div>
+              <!-- END NON-LOGGED IN USER -->
+              <!-- START LOGGED IN USER -->
+              <div class="d-flex align-items-center gap-2">
+                <img
+                  id="profile_image"
+                  style="width: 40px; height: 40px; padding: 4px"
+                  class="rounded-circle"
+                  src=""
+                  alt=""
+                />
+                <b id="nav-user"></b>
+                <a
+                  role="button"
+                  id="logout-btn"
+                  class="btn btn-outline-danger"
+                  onclick="logout()"
+                >
+                  Logout
+                </a>
+              </div>
+              <!-- END LOGGED IN USER -->
             </div>
-            <!-- END NON-LOGGED IN USER -->
-            <!-- START LOGGED IN USER -->
-            <div class="d-flex align-items-center gap-2">
-              <img
-                id="profile_image"
-                style="width: 40px; height: 40px; padding: 4px"
-                class="rounded-circle"
-                src=""
-                alt=""
-              />
-              <b id="nav-user"></b>
-              <a
-                role="button"
-                id="logout-btn"
-                class="btn btn-outline-danger"
-                onclick="logout()"
-              >
-                Logout
-              </a>
-            </div>
-            <!-- END LOGGED IN USER -->
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   </div>
 </div>
+<div class="pt-5 mt-4"></div>
 <!-- ===== NAVIGATION ===== -->
